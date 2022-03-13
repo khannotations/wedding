@@ -1,0 +1,71 @@
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  line-height: $line-height;
+  font-family: $font-family-serif;
+  font-weight: 400;
+}
+
+.h6, h6 {
+  font-size: 1.125rem;
+}
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 3,
+  7: $spacer * 4,
+  8: $spacer * 5,
+) !default;
+
+@each $num,$space in $spacers{
+  .p-#{$num} {
+    padding: $space !important;
+  }
+  .m-#{$num} {
+    margin: $space !important;
+  }
+  .px-#{$num} {
+    padding-left: $space !important;
+    padding-right: $space !important;
+  }
+  .mx-#{$num} {
+    margin-left: $space !important;
+    margin-right: $space !important;
+  }
+  .py-#{$num} {
+    padding-top: $space !important;
+    padding-bottom: $space !important;
+  }
+  .my-#{$num} {
+    margin-top: $space !important;
+    margin-bottom: $space !important;
+  }
+  .pl-#{$num} {
+    padding-left: $space;
+  }
+  .pr-#{$num} {
+    padding-right: $space;
+  }
+  .ml-#{$num} {
+    margin-left: $space !important;
+  }
+  .mr-#{$num} {
+    margin-right: $space !important;
+  }
+  .pt-#{$num} {
+    padding-top: $space !important;
+  }
+  .pb-#{$num} {
+    padding-bottom: $space !important;
+  }
+  .mt-#{$num} {
+    margin-top: $space !important;
+  }
+  .mb-#{$num} {
+    margin-bottom: $space !important;
+  }
+}

@@ -14,13 +14,28 @@ a { text-decoration: none !important; }
 b, .b { font-weight: 400 !important; }
 strong, .strong { font-weight: 600 !important; }
 
-
 .text-gray { color: gray; }
 .text-white { color: white; }
+.text-pink { color: $light; }
 
 .font-sans {
   font-family: $font-family-base, Helvetica, sans-serif !important;
   font-weight: 300;
+}
+
+.bg-white { background-color: white; }
+.bg-red { background-color: $red; }
+.bg-blue { background-color: $blue; }
+.bg-green { background-color: $green; }
+.bg-gold { background-color: $gold; }
+
+.bg-gradient-dark-light {
+  @include gradient-y(lighten($red, 10%), $light);
+  height: 200px;
+}
+
+.fade-in-scroll {
+  opacity: 0;
 }
 
 .box-shadow {
@@ -58,12 +73,6 @@ strong, .strong { font-weight: 600 !important; }
     height: 200px;
     margin-right: 20px;
   }
-}
-
-.bg-fixed {
-  background-attachment: fixed;
-  background-position: center top;
-  background-size: cover;
 }
 
 .bg-main {

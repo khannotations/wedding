@@ -8,18 +8,26 @@
   font-size: 1.125rem;
 }
 
-$spacer: 1rem;
-$spacers: (
-  0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 2,
-  6: $spacer * 3,
-  7: $spacer * 4,
-  8: $spacer * 5,
-) !default;
+$spacer:                      1rem;
+$spacers: ();
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: ($spacer * .75),
+    4: $spacer,
+    5: ($spacer * 1.25),
+    6: ($spacer * 1.5),
+    7: ($spacer * 2),
+    8: ($spacer * 3),
+    9: ($spacer * 4),
+    10: ($spacer * 6),
+    11: ($spacer * 7),
+    12: ($spacer * 8)
+  ),
+  $spacers
+);
 
 @each $num,$space in $spacers{
   .p-#{$num} {
@@ -68,4 +76,25 @@ $spacers: (
   .mb-#{$num} {
     margin-bottom: $space !important;
   }
+}
+
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge(
+  (
+    10: 10%,
+    25: 25%,
+    33: 33%,
+    50: 50%,
+    66: 66%,
+    75: 75%,
+    90: 90%,
+    100: 100%,
+    auto: auto
+  ),
+  $sizes
+);
+
+@mixin gradient-y($start-color: null, $end-color: null, $start-percent: null, $end-percent: null) {
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);
 }

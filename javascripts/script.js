@@ -1,6 +1,13 @@
+function customScrollTo(selector, time=1) {
+  console.log('click');
+  $('body,html').animate({
+      scrollTop: $(selector).offset().top,
+  }, time, 'swing');
+}
+
 $(document).ready(function() {
   /* Every time the window is scrolled ... */
-  $(window).scroll( function(){
+  $(window).scroll(function(){
     /* Check the location of each desired element */
     $('.fade-in-scroll').each( function(i){
       var topObject = $(this).position().top + 100;

@@ -613,13 +613,21 @@ html, body {
   background: #FBF2EE; }
 
 a {
-  text-decoration: none !important; }
+  text-decoration: none !important;
+  border-bottom: 1pt dotted black;
+  font-weight: 500; }
+  a:hover, a:visited {
+    border-bottom: 1pt solid black; }
+  a.text-reset {
+    color: inherit; }
+    a.text-reset:hover, a.text-reset:visited {
+      color: inherit; }
 
 b, .b {
-  font-weight: 400 !important; }
+  font-weight: 500 !important; }
 
 strong, .strong {
-  font-weight: 600 !important; }
+  font-weight: 700 !important; }
 
 .text-gray {
   color: gray; }
@@ -627,8 +635,14 @@ strong, .strong {
 .text-white {
   color: white; }
 
-.text-pink {
+.text-light {
   color: #FBF2EE; }
+
+.text-red {
+  color: #7D121E; }
+
+.text-gold {
+  color: #FFC857; }
 
 .font-sans {
   font-family: "Open Sans", Helvetica, sans-serif !important;
@@ -685,6 +699,9 @@ strong, .strong {
 
 .bg-main {
   background-image: url("./images/backgrounds/main3.jpg"); }
+
+.nav-tile {
+  min-height: 400px; }
 
 .footer {
   background-color: #577590; }

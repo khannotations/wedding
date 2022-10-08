@@ -10,13 +10,29 @@ html, body {
   background: $light; 
 } 
 
-a { text-decoration: none !important; }
-b, .b { font-weight: 400 !important; }
-strong, .strong { font-weight: 600 !important; }
+a { 
+  text-decoration: none !important;
+  border-bottom: 1pt dotted black;
+  font-weight: 500;
+  &:hover, &:visited {
+    border-bottom: 1pt solid black;
+  }
+  &.text-reset {
+    color: inherit;
+    &:hover, &:visited {
+      color: inherit;
+    }
+  }
+}
+
+b, .b { font-weight: 500 !important; }
+strong, .strong { font-weight: 700 !important; }
 
 .text-gray { color: gray; }
 .text-white { color: white; }
-.text-pink { color: $light; }
+.text-light { color: $light; }
+.text-red { color: $red; }
+.text-gold { color: $gold; }
 
 .font-sans {
   font-family: $font-family-base, Helvetica, sans-serif !important;
@@ -77,6 +93,10 @@ strong, .strong { font-weight: 600 !important; }
 
 .bg-main {
   background-image: url('./images/backgrounds/main3.jpg');
+}
+
+.nav-tile {
+  min-height: 400px;
 }
 
 .footer {
